@@ -1,0 +1,211 @@
+.propuesta {
+  background: var(--color-hueso);
+  padding: 120px 48px;
+  overflow: hidden;
+}
+
+.propuesta__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.propuesta__header {
+  margin-bottom: 72px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.propuesta__header.visible { opacity: 1; transform: none; }
+
+.propuesta__header .section-tag {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.propuesta__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--color-carbon);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.propuesta__title em {
+  color: var(--color-naranja);
+  font-style: italic;
+}
+
+.propuesta__intro {
+  font-size: 1rem;
+  color: var(--color-miel);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* Stakeholders */
+.stakeholders-section {
+  margin-bottom: 64px;
+}
+
+.stakeholders {
+  background: var(--color-carbon);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.stakeholders.visible { opacity: 1; transform: none; }
+
+.stakeholders__center {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stakeholders__label-center {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-naranja);
+  padding: 12px 24px;
+  background: rgba(232, 105, 42, 0.12);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(232, 105, 42, 0.25);
+  display: inline-block;
+}
+
+.stakeholder-ring {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(245, 239, 224, 0.06);
+}
+
+.stakeholder-ring__num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  flex-shrink: 0;
+}
+
+.stakeholder-ring__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 224, 0.4);
+  margin-bottom: 6px;
+}
+
+.stakeholder-ring__actores {
+  font-size: 0.9rem;
+  color: rgba(245, 239, 224, 0.8);
+  line-height: 1.5;
+}
+
+/* Recursos */
+.recursos {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.recursos.visible { opacity: 1; transform: none; }
+
+.recursos__tabla {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(196, 83, 26, 0.12);
+}
+
+.recursos__head {
+  display: grid;
+  grid-template-columns: 120px 100px 1fr 1fr;
+  background: var(--color-carbon);
+  padding: 14px 20px;
+  gap: 16px;
+}
+
+.recursos__head > div {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 224, 0.4);
+  font-weight: 700;
+}
+
+.recursos__row {
+  display: grid;
+  grid-template-columns: 120px 100px 1fr 1fr;
+  padding: 14px 20px;
+  gap: 16px;
+  border-top: 1px solid rgba(196, 83, 26, 0.07);
+  transition: background 0.2s;
+  align-items: center;
+}
+
+.recursos__row:nth-child(even) { background: rgba(245, 239, 224, 0.3); }
+.recursos__row:hover { background: rgba(232, 105, 42, 0.04); }
+
+.recursos__item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-carbon);
+}
+
+.estado--si {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-verde-claro);
+  font-weight: 700;
+}
+
+.estado--no {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-tierra);
+  font-weight: 700;
+}
+
+.estado--parcial {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-ocre);
+  font-weight: 700;
+}
+
+.recursos__necesito {
+  font-size: 0.82rem;
+  color: var(--color-cafe);
+  line-height: 1.4;
+}
+
+.recursos__como {
+  font-size: 0.82rem;
+  color: rgba(61, 43, 31, 0.5);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .propuesta { padding: 80px 24px; }
+  .stakeholders { padding: 28px; }
+  .recursos__tabla { overflow-x: auto; }
+  .recursos__head, .recursos__row { min-width: 580px; }
+}

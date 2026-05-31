@@ -1,0 +1,201 @@
+.problema {
+  background: var(--color-hueso);
+  padding: 120px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.problema::before {
+  content: '¿Por qué?';
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 12vw, 14rem);
+  font-weight: 900;
+  color: rgba(196, 83, 26, 0.06);
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  user-select: none;
+}
+
+.problema__container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Header */
+.problema__header {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.problema__header.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.problema__header .section-tag {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.problema__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--color-carbon);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.problema__title em {
+  color: var(--color-naranja);
+  font-style: italic;
+}
+
+.problema__intro {
+  font-size: 1rem;
+  color: var(--color-miel);
+  line-height: 1.75;
+  max-width: 560px;
+}
+
+/* Porqués chain */
+.porques {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.porque {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.porque.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.porque__num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-naranja);
+  background: rgba(232, 105, 42, 0.12);
+  border-radius: var(--radius-sm);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: start;
+  margin-top: 4px;
+}
+
+.porque__body {
+  background: #fff;
+  border: 1px solid rgba(196, 83, 26, 0.1);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  box-shadow: 0 2px 12px rgba(26, 22, 18, 0.04);
+  transition: var(--transition);
+}
+
+.porque__body:hover {
+  border-color: rgba(232, 105, 42, 0.3);
+  box-shadow: 0 4px 24px rgba(232, 105, 42, 0.08);
+}
+
+.porque__pregunta {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-carbon);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.porque__respuesta {
+  font-size: 0.9rem;
+  color: var(--color-miel);
+  line-height: 1.7;
+}
+
+.porque__arrow {
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+/* Causa raíz */
+.causa-raiz {
+  margin-top: 48px;
+  background: var(--color-carbon);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.causa-raiz.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.causa-raiz::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-naranja), var(--color-ocre), var(--color-verde-claro));
+}
+
+.causa-raiz__label {
+  margin-bottom: 20px;
+}
+
+.causa-raiz__label .section-tag {
+  color: var(--color-ocre);
+}
+
+.causa-raiz__label .section-tag::before {
+  background: var(--color-ocre);
+}
+
+.causa-raiz__quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  color: var(--color-crema);
+  line-height: 1.65;
+  border: none;
+  quotes: none;
+}
+
+@media (max-width: 768px) {
+  .problema {
+    padding: 80px 24px;
+  }
+  .causa-raiz {
+    padding: 32px 24px;
+  }
+}
